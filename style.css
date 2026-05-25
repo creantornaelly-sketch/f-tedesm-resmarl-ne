@@ -1,0 +1,544 @@
+/* ============================================
+   FÊTE DES MÈRES - MARLÈNE
+   style.css
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Quicksand:wght@400;500;600&display=swap');
+
+/* ── Variables ── */
+:root {
+  --rose:       #f472b6;
+  --rose-clair: #fce7f3;
+  --rose-deep:  #ec4899;
+  --jaune:      #fde68a;
+  --jaune-vif:  #f59e0b;
+  --vert:       #86efac;
+  --vert-deep:  #22c55e;
+  --vert-fonce: #16a34a;
+  --blanc:      #fff9fb;
+  --texte:      #4a2040;
+  --texte-doux: #7c3f6b;
+  --radius:     1.4rem;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--blanc);
+  color: var(--texte);
+  overflow-x: hidden;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── Fleurs décoratives SVG en background ── */
+.floral-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floral-bg svg {
+  position: absolute;
+  opacity: 0.18;
+}
+
+/* ════════════════════════════════════════════
+   HERO — SECTION ACCUEIL
+   ════════════════════════════════════════════ */
+#home {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem 3rem;
+  background: linear-gradient(
+    160deg,
+    #fff0f8 0%,
+    #fef3c7 40%,
+    #dcfce7 80%,
+    #fce7f3 100%
+  );
+  overflow: hidden;
+}
+
+/* Photo de Marlène */
+.photo-wrapper {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  margin-bottom: 1.8rem;
+  opacity: 0;
+  transform: scale(0.7) rotate(-6deg);
+  animation: popIn 0.8s cubic-bezier(0.34,1.56,0.64,1) 0.3s forwards;
+}
+
+.photo-cadre {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow:
+    0 0 0 4px var(--rose),
+    0 12px 40px rgba(244,114,182,0.35);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--rose-clair), var(--jaune));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-cadre img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--texte-doux);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem;
+}
+
+.photo-placeholder span:first-child { font-size: 2.5rem; }
+
+/* Petite fleur tournante autour de la photo */
+.photo-wrapper::before {
+  content: '🌸';
+  position: absolute;
+  top: -8px;
+  right: -4px;
+  font-size: 1.8rem;
+  animation: spin-slow 8s linear infinite;
+}
+
+.photo-wrapper::after {
+  content: '🌼';
+  position: absolute;
+  bottom: 0;
+  left: -8px;
+  font-size: 1.5rem;
+  animation: spin-slow 10s linear infinite reverse;
+}
+
+/* Titre */
+.hero-titre {
+  text-align: center;
+  opacity: 0;
+  animation: slideUp 0.7s ease 0.9s forwards;
+}
+
+.hero-titre .label-fete {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.hero-titre h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 10vw, 3.2rem);
+  line-height: 1.1;
+  color: var(--texte);
+  margin-bottom: 0.2rem;
+}
+
+.hero-titre h1 .nom {
+  color: var(--rose-deep);
+  font-style: italic;
+  display: block;
+}
+
+/* Sous-texte */
+.hero-sub {
+  margin-top: 1.2rem;
+  font-size: 1rem;
+  color: var(--texte-doux);
+  font-weight: 500;
+  opacity: 0;
+  animation: slideUp 0.7s ease 1.2s forwards;
+  text-align: center;
+}
+
+/* Flèche scroll */
+.scroll-hint {
+  position: absolute;
+  bottom: 1.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--texte-doux);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeIn 1s ease 1.8s forwards;
+}
+
+.scroll-hint .chevron {
+  width: 24px;
+  height: 24px;
+  border-right: 2.5px solid var(--rose);
+  border-bottom: 2.5px solid var(--rose);
+  transform: rotate(45deg);
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+/* Confettis flottants */
+.confetti {
+  position: absolute;
+  font-size: 1.4rem;
+  pointer-events: none;
+  animation: float-confetti linear infinite;
+}
+
+/* ════════════════════════════════════════════
+   SECTION INTRO
+   ════════════════════════════════════════════ */
+#intro {
+  padding: 3.5rem 1.5rem 3rem;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+#intro::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--rose), var(--jaune-vif), var(--vert-deep));
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--rose-clair);
+  color: var(--rose-deep);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+}
+
+.intro-card {
+  background: linear-gradient(135deg, #fff0f8, #fefce8, #f0fdf4);
+  border-radius: var(--radius);
+  padding: 1.8rem 1.5rem;
+  border: 1.5px solid rgba(244,114,182,0.2);
+  box-shadow: 0 8px 32px rgba(244,114,182,0.08);
+  position: relative;
+}
+
+.intro-card::before {
+  content: '❝';
+  position: absolute;
+  top: -1rem;
+  left: 1.2rem;
+  font-size: 3rem;
+  color: var(--rose);
+  line-height: 1;
+  font-family: serif;
+}
+
+.intro-card p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--texte);
+  font-weight: 500;
+}
+
+.intro-emojis {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  font-size: 1.8rem;
+}
+
+/* ════════════════════════════════════════════
+   SECTION PETITS MOTS
+   ════════════════════════════════════════════ */
+#messages {
+  padding: 3rem 1.2rem 4rem;
+  background: linear-gradient(180deg, #fff9fb, #f0fdf4);
+  position: relative;
+}
+
+.section-titre {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-titre h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  color: var(--texte);
+  line-height: 1.2;
+}
+
+.section-titre h2 em {
+  color: var(--rose-deep);
+  font-style: italic;
+}
+
+.section-titre p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--texte-doux);
+  font-weight: 500;
+}
+
+/* Grille des cartes */
+.cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* Carte générique */
+.card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(74,32,64,0.08);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Carte Texte ── */
+.card-texte {
+  background: white;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.card-texte::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: calc(var(--radius) + 2px);
+  background: linear-gradient(135deg, var(--rose), var(--jaune-vif), var(--vert));
+  z-index: -1;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.2rem 0.6rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.card-auteur {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--texte);
+}
+
+.card-relation {
+  font-size: 0.78rem;
+  color: var(--texte-doux);
+}
+
+.card-body {
+  padding: 1rem 1.2rem 1.2rem;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--texte);
+  font-weight: 500;
+}
+
+/* ── Carte Photo ── */
+.card-photo .photo-message {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+
+.card-photo .photo-placeholder-msg {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--rose-clair), var(--jaune));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--texte-doux);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.card-photo .photo-placeholder-msg span:first-child { font-size: 3rem; }
+
+/* ── Carte Vidéo ── */
+.card-video .video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #1a0a14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.card-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-video .video-placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, #2d0a22, #4a0035);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.play-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  backdrop-filter: blur(4px);
+}
+
+/* ── Couleurs avatar ── */
+.av-rose   { background: #fce7f3; }
+.av-jaune  { background: #fef3c7; }
+.av-vert   { background: #dcfce7; }
+.av-bleu   { background: #dbeafe; }
+.av-violet { background: #f3e8ff; }
+.av-orange { background: #ffedd5; }
+
+/* ════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════ */
+footer {
+  background: linear-gradient(135deg, var(--rose-deep), #be185d);
+  color: white;
+  text-align: center;
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+footer .footer-heart {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.8rem;
+  animation: heartbeat 1.4s ease-in-out infinite;
+}
+
+footer p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+footer strong { opacity: 1; font-weight: 700; }
+
+/* ════════════════════════════════════════════
+   ANIMATIONS
+   ════════════════════════════════════════════ */
+@keyframes popIn {
+  to { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: rotate(45deg) translateY(0); }
+  50%       { transform: rotate(45deg) translateY(6px); }
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float-confetti {
+  0%   { transform: translateY(-40px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14%       { transform: scale(1.15); }
+  28%       { transform: scale(1); }
+  42%       { transform: scale(1.1); }
+  56%       { transform: scale(1); }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-4deg); }
+  50%       { transform: rotate(4deg); }
+}
+
+/* ── Utilitaire reveal au scroll ── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }

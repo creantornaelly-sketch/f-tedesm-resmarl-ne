@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonne Fête des Mères, Marlène 💐</title>
+  <link rel="stylesheet" href="style-2.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════
+     HERO — ACCUEIL
+     ═══════════════════════════════════ -->
+<section id="home">
+
+  <!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  🌸 FLEURS PNG — comment les remplacer :                    ║
+  ║                                                              ║
+  ║  1. Mets tes fichiers PNG (fond transparent) dans le même   ║
+  ║     dossier que marlene.html et style.css                    ║
+  ║                                                              ║
+  ║  2. Remplace chaque src="fleur-X.png" ci-dessous par le     ║
+  ║     nom de ton fichier. Ex : src="pivoine.png"              ║
+  ║                                                              ║
+  ║  3. Tu peux utiliser la même image pour plusieurs positions, ║
+  ║     ou des images différentes — c'est toi qui choisis !     ║
+  ║                                                              ║
+  ║  Positions disponibles :                                     ║
+  ║  fleur-tl = coin haut gauche                                 ║
+  ║  fleur-tr = coin haut droite                                 ║
+  ║  fleur-bl = coin bas gauche                                  ║
+  ║  fleur-br = coin bas droite                                  ║
+  ║  fleur-ml = milieu bord gauche                               ║
+  ║  fleur-mr = milieu bord droite                               ║
+  ╚══════════════════════════════════════════════════════════════╝
+  -->
+  <img src="images/fleur1.png" alt="" class="fleur-png fleur-tl" aria-hidden="true">
+  <img src="fleur-2.png" alt="" class="fleur-png fleur-tr" aria-hidden="true">
+  <img src="images/fleur2.png" alt="" class="fleur-png fleur-bl" aria-hidden="true">
+  <img src="images/fleur3.png" alt="" class="fleur-png fleur-br" aria-hidden="true">
+  <img src="fleur-5.png" alt="" class="fleur-png fleur-ml" aria-hidden="true">
+  <img src="fleur-6.png" alt="" class="fleur-png fleur-mr" aria-hidden="true">
+
+  <!-- Confettis (JS) -->
+  <div id="confettis" aria-hidden="true"></div>
+
+  <!-- Contenu centré -->
+  <div class="hero-inner">
+
+    <!-- Photo de Marlène -->
+    <div class="photo-wrapper">
+      <div class="photo-cadre">
+        <!--
+          ╔══════════════════════════════════════════╗
+          ║  👉 Remplace ces lignes par :            ║
+          ║  <img src="marlene.jpg" alt="Marlène">   ║
+          ╚══════════════════════════════════════════╝
+        -->
+        <div class="photo-placeholder">
+          <span>🌸</span>
+          <span>Photo de<br>Marlène</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Titre -->
+    <div>
+      <div class="hero-titre">
+        <span class="label-fete">✨ Bonne fête des mères ✨</span>
+        <h1>
+          Bonne fête<span class="nom">Marlène !</span>
+        </h1>
+      </div>
+      <p class="hero-sub">On t'aime fort 💕</p>
+    </div>
+
+  </div>
+
+  <!-- Flèche scroll -->
+  <div class="scroll-hint">
+    <span>Découvrir</span>
+    <div class="chevron"></div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════
+     INTRO
+     ═══════════════════════════════════ -->
+<section id="intro">
+  <div class="intro-inner">
+
+    <div class="section-badge reveal">🌷 Un mot de nous</div>
+
+    <div class="intro-card reveal">
+      <p>
+        Ce petit site a été créé avec tout notre amour pour toi, Marlène. 💐<br><br>
+        Parce que les mots qu'on a envie de te dire méritent mieux qu'un message rapide…
+        on a voulu te faire quelque chose de spécial, rien que pour toi.<br><br>
+        Bonne fête des mères. Tu mérites tout ce bonheur. 🌸
+      </p>
+    </div>
+
+    <div class="intro-emojis reveal">
+      <span>🌸</span><span>🌼</span><span>🌺</span><span>🌻</span><span>🌷</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     PETITS MOTS
+     ═══════════════════════════════════ -->
+<section id="messages">
+  <div class="messages-inner">
+
+    <div class="section-titre reveal">
+      <h2>Les petits mots<br><em>de chacun</em></h2>
+      <p>Avec tout notre amour 💗</p>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- ══════════════════════════════════════
+           CARTE 1 — TEXTE
+           ══════════════════════════════════════ -->
+      <article class="card card-texte reveal">
+        <div class="card-header">
+          <div class="avatar av-rose">💕</div>
+          <div>
+            <div class="card-auteur">Prénom</div>          <!-- ✏️ Remplace -->
+            <div class="card-relation">Ta fille / Ton fils</div>  <!-- ✏️ Remplace -->
+          </div>
+        </div>
+        <div class="card-body">
+          <!-- ✏️ Remplace ce texte par le vrai message -->
+          Maman, je ne saurais pas trouver les mots pour dire à quel point tu comptes pour moi.
+          Tu es ma force, mon refuge et ma plus belle chance. Joyeuse fête des mères ! 🌸
+        </div>
+      </article>
+
+      <!-- ══════════════════════════════════════
+           CARTE 2 — PHOTO
+           ══════════════════════════════════════ -->
+      <article class="card card-photo reveal">
+        <div class="card-header">
+          <div class="avatar av-jaune">📸</div>
+          <div>
+            <div class="card-auteur">Prénom</div>
+            <div class="card-relation">Un souvenir partagé</div>
+          </div>
+        </div>
+        <!--
+          👉 Remplace le bloc .photo-placeholder-msg par :
+          <img src="photo-souvenir.jpg"
+               alt="Un souvenir avec Marlène"
+               class="photo-message">
+        -->
+        <div class="photo-placeholder-msg">
+          <span>🖼️</span>
+          <span>Ajoute une photo souvenir ici</span>
+        </div>
+        <div class="card-body">
+          Ce souvenir que j'ai toujours dans le cœur… Merci pour tout ce qu'on a partagé. ❤️
+        </div>
+      </article>
+
+      <!-- ══════════════════════════════════════
+           CARTE 3 — TEXTE
+           ══════════════════════════════════════ -->
+      <article class="card card-texte reveal">
+        <div class="card-header">
+          <div class="avatar av-vert">🌿</div>
+          <div>
+            <div class="card-auteur">Prénom</div>
+            <div class="card-relation">Ta relation</div>
+          </div>
+        </div>
+        <div class="card-body">
+          Tu es une maman extraordinaire, toujours là au bon moment avec le bon mot.
+          On a de la chance de t'avoir. Bonne fête ! 🌻
+        </div>
+      </article>
+
+      <!-- ══════════════════════════════════════
+           CARTE 4 — VIDÉO
+           ══════════════════════════════════════ -->
+      <article class="card card-video reveal">
+        <div class="card-header">
+          <div class="avatar av-violet">🎬</div>
+          <div>
+            <div class="card-auteur">Prénom</div>
+            <div class="card-relation">Un message vidéo</div>
+          </div>
+        </div>
+        <!--
+          👉 Remplace le bloc .video-placeholder par :
+          <div class="video-wrapper">
+            <video controls playsinline poster="thumbnail.jpg">
+              <source src="message.mp4" type="video/mp4">
+            </video>
+          </div>
+        -->
+        <div class="video-placeholder">
+          <div class="play-btn">▶</div>
+          <span>Ajoute ta vidéo ici (.mp4)</span>
+        </div>
+        <div class="card-body">
+          Un petit message tout droit du cœur, parce que certaines choses se disent mieux à voix haute. 🎤
+        </div>
+      </article>
+
+      <!-- ══════════════════════════════════════
+           CARTE 5 — TEXTE
+           ══════════════════════════════════════ -->
+      <article class="card card-texte reveal">
+        <div class="card-header">
+          <div class="avatar av-orange">🧡</div>
+          <div>
+            <div class="card-auteur">Prénom</div>
+            <div class="card-relation">Ta relation</div>
+          </div>
+        </div>
+        <div class="card-body">
+          Joyeuse fête des mères Marlène ! Tu rayonnes à chaque pièce où tu entres.
+          On est tellement fiers de t'avoir. 🌺
+        </div>
+      </article>
+
+      <!-- ══════════════════════════════════════
+           CARTE 6 — PHOTO
+           ══════════════════════════════════════ -->
+      <article class="card card-photo reveal">
+        <div class="card-header">
+          <div class="avatar av-bleu">🌊</div>
+          <div>
+            <div class="card-auteur">Prénom</div>
+            <div class="card-relation">Ta relation</div>
+          </div>
+        </div>
+        <div class="photo-placeholder-msg">
+          <span>🖼️</span>
+          <span>Ajoute une photo ici</span>
+        </div>
+        <div class="card-body">
+          Une image qui dit tout ce que les mots ne peuvent pas. On t'aime Marlène 💙
+        </div>
+      </article>
+
+      <!-- ══════════════════════════════════════
+           CARTE 7 — TEXTE
+           ══════════════════════════════════════ -->
+      <article class="card card-texte reveal">
+        <div class="card-header">
+          <div class="avatar av-rouge">🌹</div>
+          <div>
+            <div class="card-auteur">Prénom</div>
+            <div class="card-relation">Ta relation</div>
+          </div>
+        </div>
+        <div class="card-body">
+          Merci d'être toi, Marlène. Merci pour ta douceur, ton énergie et ton sourire qui illumine tout.
+          Bonne fête des mères ! 🌹
+        </div>
+      </article>
+
+      <!-- ══════════════════════════════════════
+           CARTE 8 — VIDÉO
+           ══════════════════════════════════════ -->
+      <article class="card card-video reveal">
+        <div class="card-header">
+          <div class="avatar av-cyan">🎥</div>
+          <div>
+            <div class="card-auteur">Prénom</div>
+            <div class="card-relation">Ta relation</div>
+          </div>
+        </div>
+        <div class="video-placeholder">
+          <div class="play-btn">▶</div>
+          <span>Ajoute ta vidéo ici (.mp4)</span>
+        </div>
+        <div class="card-body">
+          Je t'envoie tout mon amour depuis là où je suis. Bonne fête ! 💗
+        </div>
+      </article>
+
+      <!--
+      ╔══════════════════════════════════════════════════════════╗
+      ║  ➕ Pour ajouter une personne, copie l'un des blocs     ║
+      ║     <article class="card ..."> ci-dessus et change :    ║
+      ║     • la classe avatar (av-rose/jaune/vert/bleu/violet/  ║
+      ║       orange/rouge/cyan)                                  ║
+      ║     • le prénom, la relation                              ║
+      ║     • le texte du message                                 ║
+      ╚══════════════════════════════════════════════════════════╝
+      -->
+
+    </div><!-- /cards-grid -->
+  </div><!-- /messages-inner -->
+</section>
+
+
+<!-- ═══════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════ -->
+<footer>
+  <span class="footer-heart">💗</span>
+  <p>
+    Fait avec amour pour<br>
+    <strong>Marlène</strong><br>
+    Bonne fête des mères 🌸
+  </p>
+</footer>
+
+
+<!-- ═══════════════════════════════════
+     JAVASCRIPT
+     ═══════════════════════════════════ -->
+<script>
+  /* ── Confettis flottants ── */
+  const confettis = document.getElementById('confettis');
+  const emojis = ['🌸','🌼','🌺','🌻','🌷','💮','🪷','✨','💕','🌹'];
+
+  function createConfetti() {
+    const el = document.createElement('span');
+    el.classList.add('confetti');
+    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.top = '-40px';
+    const duration = 6 + Math.random() * 8;
+    el.style.animationDuration = duration + 's';
+    el.style.animationDelay    = Math.random() * 4 + 's';
+    el.style.fontSize = (0.9 + Math.random() * 0.9) + 'rem';
+    confettis.appendChild(el);
+    setTimeout(() => el.remove(), (duration + 4) * 1000);
+  }
+
+  for (let i = 0; i < 14; i++) createConfetti();
+  setInterval(createConfetti, 1800);
+
+  /* ── Reveal au scroll ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const siblings = entry.target.parentElement
+        ? Array.from(entry.target.parentElement.children)
+        : [];
+      const idx = siblings.indexOf(entry.target);
+      const delay = entry.target.classList.contains('card') ? idx * 90 : 0;
+      setTimeout(() => entry.target.classList.add('visible'), delay);
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal, .card').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
