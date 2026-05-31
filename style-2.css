@@ -454,7 +454,8 @@ footer strong { opacity: 1; font-weight: 700; }
   position: fixed;
   inset: 0;
   background: rgba(74, 32, 64, 0.55);
-  backdrop-filter: blur(4px);
+-webkit-backdrop-filter: blur(4px);
+backdrop-filter: blur(4px);
   z-index: 1000;
   display: flex;
   align-items: center;
